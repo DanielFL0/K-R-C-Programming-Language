@@ -8,7 +8,7 @@
 int main()
 {
     /*
-     * Program that converts temperature
+     * Program that changes temperature
      * from fahrenheit to celsius.
      */
 
