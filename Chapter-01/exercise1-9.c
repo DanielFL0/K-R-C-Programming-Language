@@ -6,18 +6,16 @@
  * a single blank.
  */
 
-#define IN 1
-#define OUT 0
-
 int main()
 {
-    int c, state;
+    int c;
 
-    state = OUT;
     while ((c = getchar()) != EOF) {
-        putchar(c);
-        if (c == ' ')
+        if (c == ' ') {
             while ((c = getchar()) == ' ');
+            putchar(' ');
+        }
+        putchar(c);
     }
     return 0;
 }
