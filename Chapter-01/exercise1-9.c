@@ -15,9 +15,9 @@ int main()
 
     state = OUT;
     while ((c = getchar()) != EOF) {
+        putchar(c);
         if (c == ' ')
             while ((c = getchar()) == ' ');
-        putchar(c);
     }
     return 0;
 }
