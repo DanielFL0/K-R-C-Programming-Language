@@ -27,13 +27,6 @@ int main()
             ++cc;
     }
 
-    i = 0, largest = 0;
-    while (words[i] != 0) {
-        if (words[i] > largest)
-            largest = words[i];
-        ++i;
-    }
-
     /*
      * Horizontal histogram.
      */
@@ -49,12 +42,20 @@ int main()
     /*
      * Vertical histogram.
      */
+
+    i = 0, largest = 0;
+    while (words[i] != 0) {
+        if (words[i] > largest)
+            largest = words[i];
+        ++i;
+    }
+
     i = 0;
     while (words[i] != 0) {
         printf("%d ", i);
         ++i;
     }
-    
+
     for (i = 0; i < largest; ++i) {
         j = 0;
         putchar('\n');
