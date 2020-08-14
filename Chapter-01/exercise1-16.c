@@ -6,7 +6,7 @@
  * long input lines , and as much as possible of the text.
  */
 
-#define MAXLINE 1000
+#define MAXLINE 10
 
 int getline(char line[], int maxline);
 void copy(char to[], char from[]);
@@ -25,22 +25,29 @@ int main()
             copy(longest, line);
         }
     if (max > 0)
-        printf("%s", longest);
+        printf("%s\t%d", longest, max);
     return 0;
 }
 
 int getline(char s[], int lim)
 {
-    int i, c;
+    int i, c, add;
 
-    for (i = 0; i < lim-1 && ((c=getchar())!=EOF) && c!='\n'; ++i)
-        s[i] = c;
+    i = 0, add = 0;
+    while (((c=getchar())!=EOF) && c!='\n') {
+        if (i < lim-1) {
+            s[i] = c;
+            ++i;
+        }
+        else
+            ++add;
+    }   
     if (c == '\n') {
         s[i] = c;
         ++i;
     }
     s[i] = '\0';
-    return i;
+    return i = i + add;
 }
 
 void copy(char to[], char from[])
