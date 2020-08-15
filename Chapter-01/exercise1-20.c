@@ -12,6 +12,14 @@
 
 int main()
 {
+    int c, i;
 
+    while ((c = getchar()) != EOF)
+        if (c == '\t')
+            for (i = 0; i < TABWIDTH; ++i)
+                putchar(' ');
+        else
+            putchar(c);
+         
     return 0;
 }
