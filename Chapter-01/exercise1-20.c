@@ -17,7 +17,7 @@
 
 int main()
 {
-    int c, i, cc, blanks;
+    int c, i, cc;
 
     cc = 0;
     while ((c = getchar()) != EOF) {
