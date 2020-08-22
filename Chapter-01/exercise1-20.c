@@ -25,7 +25,7 @@ int main()
             cc = 0;
         else if (c == '\t') {
             for (i = 0; i < TABWIDTH - (cc%TABWIDTH); ++i)
-                putchar('#');
+                putchar(' ');
             cc = 0;
         }
         else {
