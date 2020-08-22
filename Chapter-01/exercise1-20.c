@@ -10,16 +10,28 @@
 
 #define TABWIDTH 8
 
+/* "Hello my name is Daniel and I like programming in C" */
+/*  ^       ^       ^       ^       ^       ^       ^    */
+/* "Hello   my      name    is Daniel and I like programming in C" */
+/*  ^       ^       ^       ^       ^       ^       ^    */
+
 int main()
 {
-    int c, i;
+    int c, i, cc, blanks;
 
-    while ((c = getchar()) != EOF)
-        if (c == '\t')
-            for (i = 0; i < TABWIDTH; ++i)
-                putchar(' ');
-        else
+    cc = 0;
+    while ((c = getchar()) != EOF) {
+        if (c == '\n')
+            cc = 0;
+        else if (c == '\t') {
+            for (i = 0; i < TABWIDTH - (cc%TABWIDTH); ++i)
+                putchar('#');
+            cc = 0;
+        }
+        else {
             putchar(c);
-         
+            ++cc;
+        }
+    }
     return 0;
 }
