@@ -8,8 +8,17 @@
  * stop, which should be given preference?
  */
 
+#define TABWIDTH 8
+
 int main()
 {
+    
+    int c, i, cc;
+
+    while ((c = getchar()) != EOF) {
+        if (c == '\n')
+            
+    }
 
     return 0;
 }
